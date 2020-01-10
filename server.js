@@ -1,11 +1,19 @@
 var http = require('http');
+	var fs = require('fs');
+var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
 
 //Req object comes loaded with details of the request that has been made. Res object is used to send response to client
 var server = http.createServer((req, res) => {
 	console.log('request was made ' + req.url);
-	res.writeHead(200, {'Content-Type' : 'text/plain'});
+	res.writeHead(200, {'Content-Type' : 'text/html'});
 	//End the response and send it back to browser
-	res.end('Hey girl what is up!');
+
+
+//createReadStream has event.emitter inheritted. Emits whenever a chunk of data is received.
+
+//piping
+myReadStream.pipe(res);
+
 });
 
 //127.0.0.1 is local server default IP
