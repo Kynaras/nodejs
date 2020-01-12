@@ -6,6 +6,7 @@ var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
 var server = http.createServer((req, res) => {
 	console.log('request was made ' + req.url);
 	res.writeHead(200, {'Content-Type' : 'text/html'});
+	console.log("looged");
 	//End the response and send it back to browser
 
 
