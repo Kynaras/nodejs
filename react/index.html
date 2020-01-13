@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Basics</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+      class App extends React.Component
+      {
+          //Important. All components must have this render func
+          render(){
+              return(
+                  //Generally should always be a root div or element wrapping the other tags. Don't use css naming tags like "class". Instead use className
+                  <div>
+                    <h1>Hey man</h1>
+                    </div>
+              )
+          }
+      }
+  </script>
+
+</body>
+</html>
